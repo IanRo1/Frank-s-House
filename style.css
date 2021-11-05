@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(to left top, rgb(22, 77, 122), rgb(80, 62, 184));
+    color:white;
+}
+
+.location,.temp {
+ height:10vh;
+ width:22%;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.temp{
+    flex-direction: column;
+}
+.degree{
+    display: flex;
+    align-items: center;
+}
+
+.degree span{
+    margin:10px;
+    font-size: 20px;
+}
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:50px;
+}
+.frank_Search{
+    display: flex;
+}
+
+.frank_Search button{
+     margin:10px;
+     height:30px;
+     width:100px;
+    outline:none;
+    border:none;
+    color: black;
+    font-size: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:white;
+    cursor:pointer;
+   
+}
+.frank_Search button:hover{
+    opacity:0.9;
+}
+.searchbar h4 {
+    margin:10px;
+}
+.search{
+    margin:20px;
+    height:3vh;
+    width:60vh;
+    border:none;
+    outline:none;
+    border-radius: 5vh;
+    text-align: start;
+}
