@@ -5,8 +5,9 @@
     })
     .then(data => {
         const {temp, description} = data;
+        let weatherDescr = data.weather[0].description;
         intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
-        intDescr.textContent = data.weather[1];
+        intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase() + " at Frank's House";
     });
 
 

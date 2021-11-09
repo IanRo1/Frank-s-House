@@ -52,11 +52,12 @@ body {
      height:30px;
      width:100px;
     outline:none;
-    border:none;
-    color: black;
+    border-style:solid;
+    background-color: white;
     font-size: 12px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color:white;
+    background:rgb(245, 240, 240);
+    color:black;
     cursor:pointer;
    
 }
@@ -68,10 +69,10 @@ body {
 }
 .search{
     margin:20px;
-    height:3vh;
+    height:3.5vh;
     width:60vh;
     border:none;
     outline:none;
     border-radius: 5vh;
-    text-align: start;
+    text-align:start;
 }
