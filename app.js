@@ -3,6 +3,7 @@
     let intDescr = document.querySelector('.tempDescription');
     let disVoice = document.querySelector('.disemVoice');
     let globSearch = document.querySelector('.gSearch');
+    let frankSpch = document.querySelector('.frankTxt');
 
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}";
@@ -36,15 +37,33 @@
     }     
     function voiceChange4(){
         globSearch.addEventListener('click', () => {
-            disVoice.textContent = "Awww, here he comes!"
-            voiceChange5()
+            disVoice.textContent = "Awww, here he comes!";
+
+            frankVoice1()
         });
     }     
-    function voiceChange5(){
-        globSearch.addEventListener('click', () => {
-            disVoice.textContent = ""
-        });
-    }     
+    function frankVoice1(){
+            frankSpch.textContent = "Oh, I didn't see you guys there!";
+            setTimeout(function() {
+                disVoice.textContent = "";
+              }, 1000);
+              setTimeout(function() {
+                frankSpch.textContent = "Speaking of see, did I ever tell you about my favorite seafood?";;
+              }, 4000);
+              setTimeout(function() {
+                frankSpch.textContent = "It's tilapia, the nice guy of fish!";
+              }, 10000);
+              setTimeout(function() {
+                frankSpch.textContent = "Like, tilapia's the kind of fish you'd want to settle down with after salmon's lost it's thrill. ";
+              }, 13000);
+              setTimeout(function() {
+                frankSpch.textContent = "Speaking of thrills, I went bungee-jumping once! What a time that was...";
+              }, 16000);
+              setTimeout(function() {
+                frankSpch.textContent = "Just me and big Phil. Man, that guy was never on time...";
+              }, 18000);
+    };     
 
 
       voiceChange1();
+

@@ -24,9 +24,18 @@ body {
 }
 
 .location p{
-    margin:90px;
+    margin:80px;
     transform: translateX(340px);
 }
+
+.frankTxt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-10px);
+}
+
+
 
 .hpBar1{
     background-color: rgb(16, 165, 16);
@@ -106,6 +115,22 @@ body {
     opacity:0.9;
 }
 
+.escape{
+    margin:10px;
+     height:50px;
+     width:100px;
+    outline:none;
+    border-style:solid;
+    background-color: white;
+    font-size: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:rgb(255, 255, 255);
+    color:rgb(32, 88, 153);
+    cursor:pointer;
+    padding:4px;
+    transform: translateX(25rem);
+    opacity:0;
+}
 .tempDescription{
     font-size: 1.2em;
     text-align: center;
@@ -117,6 +142,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition-timing-function: ease-out 2s;
 }
 .search{
     margin:20px;
@@ -126,4 +152,3 @@ body {
     outline:none;
     text-align:initial;
 }
-
