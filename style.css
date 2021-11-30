@@ -38,26 +38,19 @@ body {
 
 
 .hpBar1{
-    background-color: rgb(16, 165, 16);
-    height:20px;
+    height:5em;
     width:20rem;
-    border-radius: 3rem;
-    transform: translateX(360px);
-    border:solid;
+    transform: translateX(410px);
     opacity:0;
 }
 
 .hpBar2{
-    background-color: rgb(233, 21, 21);
-    height:30px;
-    width:25rem;
-    border-radius: 3rem;
-    display: flex;
-    transform: translateY(150px);
-    justify-content: center;
+    display:flex;
+    flex-direction: column;
     align-items: center;
-    border:solid;
-    opacity:0;
+    justify-content: center;
+    color:white;
+    opacity: 0;
 }
 .playerHealth p{
     justify-content: center;
@@ -98,7 +91,7 @@ body {
 
 .frank_Search button{
      margin:10px;
-     height:30px;
+     height:40px;
      width:100px;
     outline:none;
     border-style:solid;
@@ -131,10 +124,13 @@ body {
     transform: translateX(25rem);
     opacity:0;
 }
+
+.escape button:hover{
+    opacity:0.9;
+}
 .tempDescription{
     font-size: 1.2em;
     text-align: center;
-    margin:5px;
     transform: translateY(20px);
 }
 .disemVoice{
