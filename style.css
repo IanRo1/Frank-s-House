@@ -19,29 +19,36 @@ body {
  height:10vh;
  width:22%;
  display: flex;
- justify-content: space-around;
+ justify-content: center;
  align-items: center;
 }
 
 .location p{
     margin:80px;
-    transform: translateX(340px);
+    transform: translateX(360px);
+}
+.location-timezone{
+    position:absolute;
+    left:10em;
+    top:6em;
+
 }
 
-.frankTxt{
+.frankSpch{
     display: flex;
     justify-content: center;
-    align-items: center;
-    transform: translateY(-10px);
+    align-self:center;
+    position: relative;
 }
-
-
 
 .hpBar1{
     height:5em;
     width:20rem;
     transform: translateX(410px);
     opacity:0;
+    position:absolute;
+    right:33em;
+    top:25em;
 }
 
 .hpBar2{

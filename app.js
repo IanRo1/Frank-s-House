@@ -76,9 +76,8 @@
         esC.addEventListener('click', () => {
           hpB1.style.opacity = 1;
           hpB2.style.opacity = 1;
-          setTimeout(function() {
             disVoice.textContent = "That's probably not a great sign.";
-      }, 1000);
+      
       setTimeout(function() {
         disVoice.textContent = "";
   }, 3000);
@@ -93,12 +92,15 @@
       function wordDuel() {
         
         let damageCalc = Math.floor(Math.random() * 100);
-          playerHP = playerHP - damageCalc;
+        let damageCalc1 = Math.floor(Math.random() * 100);
           frankHP = frankHP - damageCalc;
-          if(playerHP){
-          hpB1.textContent ='1000/' + frankHP;
+          if(playerHP, frankHP){
+          hpB1.textContent ='HP 1000/' + frankHP;
           }
-          console.log(playerHP);
+          setTimeout(function() {
+            playerHP = playerHP - damageCalc1;
+            hpB2.textContent ='HP 1000/' + playerHP;
+          }, 4000);
           
          }
          
