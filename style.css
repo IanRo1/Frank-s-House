@@ -23,14 +23,24 @@ body {
  align-items: center;
 }
 
-.location p{
-    margin:80px;
-    transform: translateX(360px);
+.location h1{
+    position: absolute;
+    transform: translateX(50%);
+    transform: translateY(50%);
+}
+
+.icon2, .frankSpch{
+    display: flex;
+    justify-content: center;
+ align-items: center;
+    margin:2em;
+    transform: translateX(430px);
 }
 .location-timezone{
-    position:absolute;
+    position: absolute;
     left:10em;
-    top:6em;
+    top:5.9em;
+    
 
 }
 
