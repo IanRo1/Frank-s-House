@@ -76,15 +76,11 @@
         esC.addEventListener('click', () => {
           hpB1.style.opacity = 1;
           hpB2.style.opacity = 1;
-            disVoice.textContent = "That's probably not a great sign.";
-      
-      setTimeout(function() {
-        disVoice.textContent = "";
-  }, 3000);
-  wordDuel()
+          setTimeout(function() {
+            disVoice.textContent = "";
+      }, 3000);
+      wordDuel()
       })};
-
-      
     
       let playerHP = 1000;
       let frankHP = 1000;
@@ -100,24 +96,33 @@
           setTimeout(function() {
             playerHP = playerHP - damageCalc1;
             hpB2.textContent ='HP 1000/' + playerHP;
-          }, 4000);
-          
+          }, 2800);
+          if(frankHP <=0){
+            hpB1.style.opacity = 0;
+            hpB2.style.opacity = 0;
+            frankSpch.style.opacity = 0;
+            disemVoice();
+          }
          }
          
-        
+         function disemVoice(){
+          setTimeout(function() {
+            disVoice.textContent = ".....Frank? Frank?";
+          },1000);
+          setTimeout(function() {
+            disVoice.textContent = "....I'm not sure if you commited a crime or not....";
+          }, 4000);
+          setTimeout(function() {
+            disVoice.textContent = "But you should probably lay low for a while...";
+          }, 10000);
+          setTimeout(function() {
+            disVoice.textContent = "Better check the weather for your new hiding spot, I guess...";
+          }, 13000);
+          setTimeout(function() {
+            disVoice.textContent = "...I gotta go back to grad school or something...You changed man.";
+          }, 18000);
+      }     
       
      
-        
-        
-         
-        
-        
-
-       
-        
-      
-
-      
-      
       escapeConvo();
       voiceChange1();
