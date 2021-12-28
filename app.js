@@ -7,12 +7,13 @@
     let esC = document.querySelector('.escape');
     let hpB1 = document.querySelector('.hpBar1');
     let hpB2 = document.querySelector('.hpBar2');
+    let searchNew = document.querySelector('.search');
 
     
    
     
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
-    const eventAPI = "api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}";
+    const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
 
     fetch(api).then(response => {return response.json();
     })
@@ -47,6 +48,8 @@
             disVoice.textContent = "Awww, here he comes!";
             esC.style.opacity = 1;
             frankVoice1()
+            return;
+            
         });
     }     
     
@@ -96,22 +99,28 @@
           setTimeout(function() {
             playerHP = playerHP - damageCalc1;
             hpB2.textContent ='HP 1000/' + playerHP;
+            if (playerHP <=0){
+              hpB1.style.opacity = 0;
+            hpB2.style.opacity = 0;
+            frankSpch.style.opacity = 0;
+              }
           }, 2800);
-          if(frankHP <=0){
+          if(frankHP <= 0){
             hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
             frankSpch.style.opacity = 0;
             disemVoice();
-          }
+            
+          } 
          }
-         
+          
          function disemVoice(){
           setTimeout(function() {
-            disVoice.textContent = ".....Frank? Frank?";
-          },1000);
+            disVoice.textContent = "........Frank? Frank?";
+          },);
           setTimeout(function() {
             disVoice.textContent = "....I'm not sure if you commited a crime or not....";
-          }, 4000);
+          }, 5000);
           setTimeout(function() {
             disVoice.textContent = "But you should probably lay low for a while...";
           }, 10000);
@@ -119,10 +128,30 @@
             disVoice.textContent = "Better check the weather for your new hiding spot, I guess...";
           }, 13000);
           setTimeout(function() {
+            disVoice.textContent = "...I dunno....";
+          }, 15000);
+          setTimeout(function() {
             disVoice.textContent = "...I gotta go back to grad school or something...You changed man.";
           }, 18000);
+          globSearch.addEventListener('click', newWeather);
       }     
       
-     
+      function newWeather(){
+        const userInputValue = globSearch.value;
+        if (userInputValue === null || userInputValue === '') return;
+        const searchUrl = eventAPI + userInputValue + '&appid={API key}';
+        searchAPI(searchUrl);
+      }
+        function searchAPI(searchUrl){
+        fetch(eventAPI).then(response => {return response.json();
+        })
+        .then(data => {
+            const {temp, description} = data;
+            let weatherDescr = data.weather[0].description;
+            intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
+            intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase();
+        });
+          
+      }
       escapeConvo();
       voiceChange1();
