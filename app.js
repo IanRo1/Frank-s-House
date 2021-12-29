@@ -24,7 +24,7 @@
         intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase() + " at Frank's House";
     });
       
-      
+    const firstTime = true;
           function voiceChange1(){
         globSearch.addEventListener('click', () => {
             disVoice.textContent = "By Global Search, you mean Frank's House right?"
@@ -46,12 +46,18 @@
     function voiceChange4(){
         globSearch.addEventListener('click', () => {
             disVoice.textContent = "Awww, here he comes!";
-            esC.style.opacity = 1;
-            frankVoice1()
-            return;
-            
-        });
+            voiceChange5();
+        }
+        );
     }     
+    function voiceChange5(){
+      globSearch.addEventListener('click', () => {
+          disVoice.textContent = "";
+          esC.style.opacity = 1;
+          frankVoice1();
+      }
+      );
+  }     
     
     function frankVoice1(){
             frankSpch.textContent = "Oh, I didn't see you guys there!";
