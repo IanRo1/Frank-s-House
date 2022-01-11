@@ -8,9 +8,9 @@
     let hpB1 = document.querySelector('.hpBar1');
     let hpB2 = document.querySelector('.hpBar2');
     let searchNew = document.querySelector('.search');
-
+    let location1 = document.querySelector('.location-title');
     
-   
+    
     
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -19,12 +19,14 @@
     })
     .then(data => {
         const {temp, description} = data;
+        console.log(data);
         let weatherDescr = data.weather[0].description;
+        location1.textContent = data.name + "," + data.sys.country
         intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
         intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase() + " at Frank's House";
+
     });
       
-    const firstTime = true;
           function voiceChange1(){
         globSearch.addEventListener('click', () => {
             disVoice.textContent = "By Global Search, you mean Frank's House right?"
@@ -47,17 +49,17 @@
         globSearch.addEventListener('click', () => {
             disVoice.textContent = "Awww, here he comes!";
             voiceChange5();
+            esC.style.opacity = 1;
+          frankVoice1();
         }
         );
     }     
     function voiceChange5(){
       globSearch.addEventListener('click', () => {
-          disVoice.textContent = "";
-          esC.style.opacity = 1;
-          frankVoice1();
+          disVoice.textContent = "";      
       }
       );
-  }     
+    }  
     
     function frankVoice1(){
             frankSpch.textContent = "Oh, I didn't see you guys there!";
@@ -65,7 +67,7 @@
                 disVoice.textContent = "";
               }, 1000);
               setTimeout(function() {
-                frankSpch.textContent = "Speaking of see, did I ever tell you about my favorite seafood?";;
+                frankSpch.textContent = "Speaking of see, did I ever tell you about my favorite seafood?";
               }, 4000);
               setTimeout(function() {
                 frankSpch.textContent = "It's tilapia, the nice guy of fish!";
@@ -119,7 +121,6 @@
             
           } 
          }
-          
          function disemVoice(){
           setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
@@ -143,21 +144,20 @@
       }     
       
       function newWeather(){
-        const userInputValue = globSearch.value;
-        if (userInputValue === null || userInputValue === '') return;
-        const searchUrl = eventAPI + userInputValue + '&appid={API key}';
-        searchAPI(searchUrl);
-      }
-        function searchAPI(searchUrl){
-        fetch(eventAPI).then(response => {return response.json();
+        const userInputValue = searchNew.value;
+        if (userInputValue === null) return;
+        else{
+        const searchUrl = eventAPI + userInputValue + '&appid=';
+        fetch(searchUrl).then(response => {return response.json();
         })
         .then(data => {
             const {temp, description} = data;
+            location1.textContent = data.name + "," + data.sys.country
             let weatherDescr = data.weather[0].description;
             intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
             intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase();
         });
           
-      }
+      }}
       escapeConvo();
       voiceChange1();

@@ -23,7 +23,8 @@ body {
  align-items: center;
 }
 
-.location h1{
+.location-title{
+    font-size: 3vh;
     position: absolute;
     transform: translateX(50%);
     transform: translateY(50%);
