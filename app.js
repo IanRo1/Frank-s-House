@@ -3,6 +3,7 @@
     let intDescr = document.querySelector('.tempDescription');
     let disVoice = document.querySelector('.disemVoice');
     let globSearch = document.querySelector('.gSearch');
+    let searchB = document.querySelector('.search');
     let frankSpch = document.querySelector('.frankTxt');
     let esC = document.querySelector('.escape');
     let hpB1 = document.querySelector('.hpBar1');
@@ -15,13 +16,16 @@
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
 
+    let arr = api.split(/\s*,\s*/).slice(1,-1);
+    
+
     fetch(api).then(response => {return response.json();
     })
     .then(data => {
         const {temp, description} = data;
         console.log(data);
         let weatherDescr = data.weather[0].description;
-        location1.textContent = data.name + "," + data.sys.country
+        location1.textContent = data.name + "," + arr + "," +data.sys.country;
         intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
         intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase() + " at Frank's House";
 
@@ -148,11 +152,18 @@
         if (userInputValue === null) return;
         else{
         const searchUrl = eventAPI + userInputValue + '&appid=';
+
+        const stID = userInputValue.split(/\s*,\s*/).slice(1,-1);
+        
+
         fetch(searchUrl).then(response => {return response.json();
         })
         .then(data => {
             const {temp, description} = data;
-            location1.textContent = data.name + "," + data.sys.country
+            location1.textContent = data.name + "," + stID + "," + data.sys.country;
+            if(stID.length === 0){
+              location1.textContent = data.name + ","+ data.sys.country;
+            }
             let weatherDescr = data.weather[0].description;
             intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
             intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase();
