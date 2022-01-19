@@ -23,7 +23,6 @@
     })
     .then(data => {
         const {temp, description} = data;
-        console.log(data);
         let weatherDescr = data.weather[0].description;
         location1.textContent = data.name + "," + arr + "," +data.sys.country;
         intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
@@ -154,15 +153,18 @@
         const searchUrl = eventAPI + userInputValue + '&appid=';
 
         const stID = userInputValue.split(/\s*,\s*/).slice(1,-1);
-        
 
         fetch(searchUrl).then(response => {return response.json();
         })
         .then(data => {
             const {temp, description} = data;
-            location1.textContent = data.name + "," + stID + "," + data.sys.country;
-            if(stID.length === 0){
+
+            let strID = stID +"";
+            if(strID.length === 0 || strID.length >= 3){
               location1.textContent = data.name + ","+ data.sys.country;
+            }
+            else{
+              location1.textContent = data.name + "," + strID + "," + data.sys.country;
             }
             let weatherDescr = data.weather[0].description;
             intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
