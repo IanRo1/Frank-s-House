@@ -10,6 +10,8 @@
     let hpB2 = document.querySelector('.hpBar2');
     let searchNew = document.querySelector('.search');
     let location1 = document.querySelector('.location-title');
+    let playerBar = document.querySelector('.pHB');
+    let frankBar = document.querySelector('.frHB');
     
     
     
@@ -90,6 +92,8 @@
         esC.addEventListener('click', () => {
           hpB1.style.opacity = 1;
           hpB2.style.opacity = 1;
+          playerBar.style.opacity = 1;
+          frankBar.style.opacity = 1;
           setTimeout(function() {
             disVoice.textContent = "";
       }, 3000);
@@ -100,7 +104,6 @@
       let frankHP = 1000;
       
       function wordDuel() {
-        
         let damageCalc = Math.floor(Math.random() * 100);
         let damageCalc1 = Math.floor(Math.random() * 100);
           frankHP = frankHP - damageCalc;

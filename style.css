@@ -55,20 +55,33 @@ body {
 .hpBar1{
     height:5em;
     width:20rem;
-    transform: translateX(410px);
+    transform: translateX(450px);
     opacity:0;
     position:absolute;
     right:33em;
     top:25em;
 }
+.frHB{
+    height:2em;
+    width:10rem;
+    transform: translateX(260px);
+    opacity:0;
+    position:absolute;
+    right:33em;
+    top:23em;
+}
 
-.hpBar2{
+.hpBar2, .pHB{
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color:white;
     opacity: 0;
+}
+.pHB{
+    height:2em;
+    width:10rem;
 }
 .playerHealth p{
     justify-content: center;
