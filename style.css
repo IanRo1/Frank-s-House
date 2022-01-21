@@ -62,13 +62,14 @@ body {
     top:25em;
 }
 .frHB{
-    height:2em;
+    height:2.3em;
     width:10rem;
     transform: translateX(260px);
     opacity:0;
     position:absolute;
     right:33em;
-    top:23em;
+    top:22.8em;
+    
 }
 
 .hpBar2, .pHB{
@@ -80,7 +81,7 @@ body {
     opacity: 0;
 }
 .pHB{
-    height:2em;
+    height:2.3em;
     width:10rem;
 }
 .playerHealth p{

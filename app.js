@@ -70,22 +70,28 @@
             frankSpch.textContent = "Oh, I didn't see you guys there!";
             setTimeout(function() {
                 disVoice.textContent = "";
-              }, 1000);
+              }, 900);
               setTimeout(function() {
                 frankSpch.textContent = "Speaking of see, did I ever tell you about my favorite seafood?";
-              }, 4000);
+              }, 2000);
               setTimeout(function() {
                 frankSpch.textContent = "It's tilapia, the nice guy of fish!";
-              }, 10000);
+              }, 7000);
               setTimeout(function() {
                 frankSpch.textContent = "Like, tilapia's the kind of fish you'd want to settle down with after salmon's lost it's thrill. You date salmon, but marry tilapia. ";
-              }, 13000);
+              }, 9000);
               setTimeout(function() {
                 frankSpch.textContent = "Speaking of thrills, I went bungee-jumping once! What a time that was...";
-              }, 16000);
+              }, 14000);
               setTimeout(function() {
                 frankSpch.textContent = "Just me and big Phil. Man, that guy was never on time...";
               }, 18000);
+              setTimeout(function() {
+                frankSpch.textContent = "Tardy Phil, that should have been his nickname...";
+              }, 19000);
+              setTimeout(function() {
+                frankSpch.textContent = "Now where was I? Oh yes, tartar sauce...";
+              },20000);
     };     
 
       function escapeConvo() {
@@ -106,23 +112,33 @@
       function wordDuel() {
         let damageCalc = Math.floor(Math.random() * 100);
         let damageCalc1 = Math.floor(Math.random() * 100);
+
+        let min = 5, max = 10;
+        let rand = Math.floor(Math.random() * (max - min + 1) + min);
+
           frankHP = frankHP - damageCalc;
+          frankBar.value -= frankHP;
           if(playerHP, frankHP){
           hpB1.textContent ='HP 1000/' + frankHP;
           }
-          setTimeout(function() {
+          {setTimeout(function() {
             playerHP = playerHP - damageCalc1;
+            playerBar.value -= playerHP;
             hpB2.textContent ='HP 1000/' + playerHP;
             if (playerHP <=0){
               hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
             frankSpch.style.opacity = 0;
+            playerBar.style.opacity = 0;
+            frankBar.style.opacity = 0;
               }
-          }, 2800);
+          }, rand * 100);}
           if(frankHP <= 0){
             hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
             frankSpch.style.opacity = 0;
+            playerBar.style.opacity = 0;
+            frankBar.style.opacity = 0;
             disemVoice();
             
           } 
@@ -130,7 +146,7 @@
          function disemVoice(){
           setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
-          },);
+          },3300);
           setTimeout(function() {
             disVoice.textContent = "....I'm not sure if you commited a crime or not....";
           }, 5000);
