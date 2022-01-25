@@ -12,8 +12,7 @@
     let location1 = document.querySelector('.location-title');
     let playerBar = document.querySelector('.pHB');
     let frankBar = document.querySelector('.frHB');
-    
-    
+     
     
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -140,13 +139,12 @@
             playerBar.style.opacity = 0;
             frankBar.style.opacity = 0;
             disemVoice();
-            
           } 
          }
          function disemVoice(){
           setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
-          },3300);
+          },3000);
           setTimeout(function() {
             disVoice.textContent = "....I'm not sure if you commited a crime or not....";
           }, 5000);
@@ -181,15 +179,16 @@
             let strID = stID +"";
             if(strID.length === 0 || strID.length >= 3){
               location1.textContent = data.name + ","+ data.sys.country;
+                 searchNew.value = "";
             }
             else{
               location1.textContent = data.name + "," + strID + "," + data.sys.country;
+              searchNew.value = "";
             }
             let weatherDescr = data.weather[0].description;
             intTemp.textContent = Math.floor((data.main.temp -273.15) * 9/5 + 32);
             intDescr.textContent = weatherDescr.charAt(0).toUpperCase() + weatherDescr.slice(1).toLowerCase();
         });
-          
       }}
       escapeConvo();
       voiceChange1();

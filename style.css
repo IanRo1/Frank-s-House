@@ -27,7 +27,8 @@ body {
     font-size: 3vh;
     position: absolute;
     transform: translateX(50%);
-    transform: translateY(50%);
+    transform: translateY(130%);
+    letter-spacing: 1.5px;
 }
 
 .icon2, .frankSpch{
