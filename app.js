@@ -12,6 +12,7 @@
     let location1 = document.querySelector('.location-title');
     let playerBar = document.querySelector('.pHB');
     let frankBar = document.querySelector('.frHB');
+
      
     
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";

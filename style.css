@@ -35,15 +35,16 @@ body {
     display: flex;
     justify-content: center;
  align-items: center;
-    margin:2em;
+    margin:3em;
     transform: translateX(430px);
+}
+.icon2{
+    margin-top: 200px;
 }
 .location-timezone{
     position: absolute;
     left:10em;
     top:5.9em;
-    
-
 }
 
 .frankSpch{
@@ -51,6 +52,8 @@ body {
     justify-content: center;
     align-self:center;
     position: relative;
+    bottom:100px;
+    margin-top: 120px;
 }
 
 .hpBar1{
