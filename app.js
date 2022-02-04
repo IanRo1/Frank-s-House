@@ -144,6 +144,9 @@
          }
          function disemVoice(){
           setTimeout(function() {
+            frankSpch.textContent = "..Oh...My shattered heart...";
+          },3500);
+          setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
           },3000);
           setTimeout(function() {
