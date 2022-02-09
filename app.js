@@ -5,6 +5,7 @@
     let globSearch = document.querySelector('.gSearch');
     let searchB = document.querySelector('.search');
     let frankSpch = document.querySelector('.frankTxt');
+    let frankSpch1 = document.querySelector('.frankTxt1');
     let esC = document.querySelector('.escape');
     let hpB1 = document.querySelector('.hpBar1');
     let hpB2 = document.querySelector('.hpBar2');
@@ -13,7 +14,10 @@
     let playerBar = document.querySelector('.pHB');
     let frankBar = document.querySelector('.frHB');
 
-     
+
+  
+      let count = true;
+    
     
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -65,34 +69,35 @@
       }
       );
     }  
-    
+  
     function frankVoice1(){
             frankSpch.textContent = "Oh, I didn't see you guys there!";
             setTimeout(function() {
                 disVoice.textContent = "";
-              }, 900);
-              setTimeout(function() {
-                frankSpch.textContent = "Speaking of see, did I ever tell you about my favorite seafood?";
-              }, 2000);
-              setTimeout(function() {
+              },900);
+              setTimeout(function () {
+                frankSpch.textContent = "Speaking of sea, did I ever tell you about my favorite seafood?";
+              }, 3000);
+              setTimeout(function () {
                 frankSpch.textContent = "It's tilapia, the nice guy of fish!";
               }, 7000);
               setTimeout(function() {
                 frankSpch.textContent = "Like, tilapia's the kind of fish you'd want to settle down with after salmon's lost it's thrill. You date salmon, but marry tilapia. ";
               }, 9000);
-              setTimeout(function() {
+              setTimeout(function () {
                 frankSpch.textContent = "Speaking of thrills, I went bungee-jumping once! What a time that was...";
               }, 14000);
               setTimeout(function() {
                 frankSpch.textContent = "Just me and big Phil. Man, that guy was never on time...";
               }, 18000);
-              setTimeout(function() {
+              setTimeout(function () {
                 frankSpch.textContent = "Tardy Phil, that should have been his nickname...";
               }, 19000);
               setTimeout(function() {
                 frankSpch.textContent = "Now where was I? Oh yes, tartar sauce...";
               },20000);
-    };     
+    };
+
 
       function escapeConvo() {
         esC.addEventListener('click', () => {
@@ -110,6 +115,9 @@
       let frankHP = 1000;
       
       function wordDuel() {
+        if(playerHP <=0){
+          disVoice.textContent = "Looks like you got Frank'd! Hit refresh to try again!";
+        }
         let damageCalc = Math.floor(Math.random() * 100);
         let damageCalc1 = Math.floor(Math.random() * 100);
 
@@ -136,16 +144,17 @@
           if(frankHP <= 0){
             hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
-            frankSpch.style.opacity = 0;
             playerBar.style.opacity = 0;
             frankBar.style.opacity = 0;
+            frankSpch.style.opacity = 0;
             disemVoice();
           } 
          }
+
          function disemVoice(){
           setTimeout(function() {
-            frankSpch.textContent = "..Oh...My shattered heart...";
-          },3500);
+            frankSpch1.textContent = "........";
+          },);
           setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
           },3000);

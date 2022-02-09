@@ -51,6 +51,13 @@ body {
     width:300px;
 }
 
+.frankTxt1{
+    position:absolute;
+    top:1em;
+   transform: translatex(130px);
+   font-size: large;
+}
+
 .hpBar1{
     height:5em;
     width:20rem;
