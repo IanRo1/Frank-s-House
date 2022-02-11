@@ -13,12 +13,7 @@
     let location1 = document.querySelector('.location-title');
     let playerBar = document.querySelector('.pHB');
     let frankBar = document.querySelector('.frHB');
-
-
-  
-      let count = true;
-    
-    
+ 
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
 
@@ -115,25 +110,25 @@
       let frankHP = 1000;
       
       function wordDuel() {
-        if(playerHP <=0){
-          disVoice.textContent = "Looks like you got Frank'd! Hit refresh to try again!";
-        }
         let damageCalc = Math.floor(Math.random() * 100);
         let damageCalc1 = Math.floor(Math.random() * 100);
-
         let min = 5, max = 10;
         let rand = Math.floor(Math.random() * (max - min + 1) + min);
-
           frankHP = frankHP - damageCalc;
           frankBar.value -= frankHP;
+          playerHP = playerHP - damageCalc1;
+          playerBar.value -= playerHP;
           if(playerHP, frankHP){
           hpB1.textContent ='HP 1000/' + frankHP;
+          hpB2.textContent ='HP 1000/' + playerHP;
           }
-          {setTimeout(function() {
-            playerHP = playerHP - damageCalc1;
-            playerBar.value -= playerHP;
-            hpB2.textContent ='HP 1000/' + playerHP;
-            if (playerHP <=0){
+          if (playerHP <=0){
+            if(frankHP <=0){
+              return;
+            }
+            setTimeout(function() {
+              disVoice.textContent = "Looks like you got Frank'd! Hit refresh to try again!";
+            },3500);
               hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
             frankSpch.remove();
@@ -141,7 +136,6 @@
             frankBar.style.opacity = 0;
             esC.remove();
               }
-          }, rand * 100);}
           if(frankHP <= 0){
             hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;

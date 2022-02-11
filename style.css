@@ -16,7 +16,7 @@ body {
 }
 
 .location,.temp {
- height:15vh;
+ height:14vh;
  width:22%;
  display: flex;
  justify-content: center;
@@ -122,7 +122,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin:15px;
+    margin:19px;
     
 }
 .frank_Search{
@@ -183,8 +183,9 @@ body {
     align-items: center;
     flex-direction: column;
     transition-timing-function: ease-out 2s;
-    top:370px;
+    top:365px;
     position:fixed;
+    font-size: medium;
 }
 .search{
     margin:30px;
