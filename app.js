@@ -58,7 +58,7 @@
         globSearch.addEventListener('click', () => {
             disVoice.textContent = "Awww, here he comes!";
             voiceChange5();
-            esC.style.opacity = 1;
+            esC.style.visibility = "visible";
           frankVoice1();
         }
         );
@@ -136,9 +136,10 @@
             if (playerHP <=0){
               hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
-            frankSpch.style.opacity = 0;
+            frankSpch.remove();
             playerBar.style.opacity = 0;
             frankBar.style.opacity = 0;
+            esC.remove();
               }
           }, rand * 100);}
           if(frankHP <= 0){
@@ -146,33 +147,43 @@
             hpB2.style.opacity = 0;
             playerBar.style.opacity = 0;
             frankBar.style.opacity = 0;
-            frankSpch.style.opacity = 0;
+            frankSpch.remove();
+            esC.remove();
             disemVoice();
           } 
          }
 
          function disemVoice(){
           setTimeout(function() {
-            frankSpch1.textContent = "........";
+            frankSpch1.textContent = ".....*Silent Frank Noises*.....";
           },);
           setTimeout(function() {
             disVoice.textContent = "........Frank? Frank?";
-          },3000);
+          },3200);
           setTimeout(function() {
             disVoice.textContent = "....I'm not sure if you commited a crime or not....";
-          }, 5000);
+          }, 6000);
           setTimeout(function() {
-            disVoice.textContent = "But you should probably lay low for a while...";
+            disVoice.textContent = "But you should probably lay low for a while.";
           }, 10000);
           setTimeout(function() {
-            disVoice.textContent = "Better check the weather for your new hiding spot, I guess...";
+            disVoice.textContent = "Better check the weather for your new hiding spot, I guess.";
           }, 13000);
           setTimeout(function() {
-            disVoice.textContent = "...I dunno....";
+            disVoice.textContent = "....I dunno....";
           }, 15000);
           setTimeout(function() {
-            disVoice.textContent = "...I gotta go back to grad school or something...You changed man.";
+            disVoice.textContent = "...I gotta go back to grad school or something.";
           }, 18000);
+          setTimeout(function() {
+            disVoice.textContent = "You changed man.";
+          }, 20000);
+          setTimeout(function() {
+            disVoice.textContent = "Anyway, please type the location you'd like the weather of";
+          },24000);
+          setTimeout(function() {
+            disVoice.textContent = "For US locations, please use a 'City, State, Country' format";
+          }, 28000);
           globSearch.addEventListener('click', newWeather);
       }     
       

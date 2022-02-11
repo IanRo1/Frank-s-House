@@ -16,7 +16,7 @@ body {
 }
 
 .location,.temp {
- height:10vh;
+ height:15vh;
  width:22%;
  display: flex;
  justify-content: center;
@@ -27,14 +27,15 @@ body {
     font-size: 3vh;
     position: absolute;
     transform: translateX(50%);
-    transform: translateY(130%);
+    transform: translateY(240%);
     letter-spacing: 1.5px;
 }
 
 .icon2{
-    
-    top:9em;
-    transform: translateX(430px)
+    height:1%;
+    width:40%;
+    top:11em;
+    transform: translateX(400px)
 }
 
 .location-timezone{
@@ -53,8 +54,8 @@ body {
 
 .frankTxt1{
     position:absolute;
-    top:1em;
-   transform: translatex(130px);
+    top:.05em;
+   transform: translatex(1px);
    font-size: large;
 }
 
@@ -121,7 +122,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin:30px;
+    margin:15px;
+    
 }
 .frank_Search{
     display: flex;
@@ -147,6 +149,9 @@ body {
 }
 
 .escape{
+    position:absolute;
+    bottom:15em;
+    right:56em;
     margin:10px;
      height:50px;
      width:100px;
@@ -157,10 +162,10 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background:rgb(255, 255, 255);
     color:rgb(32, 88, 153);
-    cursor:pointer;
     padding:4px;
     transform: translateX(25rem);
-    opacity:0;
+    cursor:pointer;
+    visibility: hidden;
 }
 
 .escape button:hover{
@@ -171,15 +176,18 @@ body {
     text-align: center;
     transform: translateY(20px);
 }
+
 .disemVoice{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition-timing-function: ease-out 2s;
+    top:370px;
+    position:fixed;
 }
 .search{
-    margin:20px;
+    margin:30px;
     height:3.5vh;
     width:60vh;
     border:none;
