@@ -101,7 +101,7 @@
           playerBar.style.opacity = 1;
           frankBar.style.opacity = 1;
           setTimeout(function() {
-            disVoice.textContent = "";
+            
       }, 3000);
       wordDuel()
       })};
@@ -128,7 +128,7 @@
             }
             setTimeout(function() {
               disVoice.textContent = "Looks like you got Frank'd! Hit refresh to try again!";
-            },3500);
+            },100);
               hpB1.style.opacity = 0;
             hpB2.style.opacity = 0;
             frankSpch.remove();
@@ -146,7 +146,6 @@
             disemVoice();
           } 
          }
-
          function disemVoice(){
           setTimeout(function() {
             frankSpch1.textContent = ".....*Silent Frank Noises*.....";
