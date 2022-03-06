@@ -13,6 +13,15 @@
     let location1 = document.querySelector('.location-title');
     let playerBar = document.querySelector('.pHB');
     let frankBar = document.querySelector('.frHB');
+   
+    searchNew.addEventListener("submit",preventUSU);
+    globSearch.addEventListener("submit",preventUSU);
+    globSearch.addEventListener("click", preventUSU);
+
+    function preventUSU(e){
+      e.preventDefault();
+
+    }
  
     const api = "https://api.openweathermap.org/data/2.5/weather?q=fulton,IL,US&appid=";
     const eventAPI = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -101,7 +110,6 @@
           playerBar.style.opacity = 1;
           frankBar.style.opacity = 1;
           setTimeout(function() {
-            
       }, 3000);
       wordDuel()
       })};
@@ -111,7 +119,7 @@
       
       function wordDuel() {
         let damageCalc = Math.floor(Math.random() * 100);
-        let damageCalc1 = Math.floor(Math.random() * 100);
+        let damageCalc1 = Math.floor(Math.random() * 90);
         let min = 5, max = 10;
         let rand = Math.floor(Math.random() * (max - min + 1) + min);
           frankHP = frankHP - damageCalc;
@@ -154,7 +162,7 @@
             disVoice.textContent = "........Frank? Frank?";
           },3200);
           setTimeout(function() {
-            disVoice.textContent = "....I'm not sure if you commited a crime or not....";
+            disVoice.textContent = "....I'm not sure if you commited a crime or not, breaking his heart like that....";
           }, 6000);
           setTimeout(function() {
             disVoice.textContent = "But you should probably lay low for a while.";
@@ -172,16 +180,26 @@
             disVoice.textContent = "You changed man.";
           }, 20000);
           setTimeout(function() {
-            disVoice.textContent = "Anyway, please type the location you'd like the weather of";
+            disVoice.textContent = "Anyway, please type the location you'd like the weather of,";
           },24000);
           setTimeout(function() {
-            disVoice.textContent = "For US locations, please use a 'City, State, Country' format";
+            disVoice.textContent = "For US locations, please use a 'City, State, Country' format.";
           }, 28000);
           globSearch.addEventListener('click', newWeather);
       }     
       
       function newWeather(){
+        searchNew.addEventListener("submit",preventUS);
+        globSearch.addEventListener("submit",preventUS);
+        globSearch.addEventListener("click", preventUS);
+      
+        function preventUS(e){
+          e.preventDefault();
+          searchNew.value = "";
+        }
+
         const userInputValue = searchNew.value;
+        console.log(userInputValue);
         if (userInputValue === null) return;
         else{
         const searchUrl = eventAPI + userInputValue + '&appid=';
